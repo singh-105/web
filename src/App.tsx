@@ -21,6 +21,11 @@ import { VisualSearchModal } from './components/storefront/VisualSearchModal';
 import { OwnerLayout } from './components/owner/OwnerLayout';
 import { useKeepAlive } from './hooks/useKeepAlive';
 
+import { QuickLookModal } from './components/storefront/QuickLookModal';
+import { FindYourAuraModal } from './components/storefront/FindYourAuraModal';
+import { AuraStyleMirrorModal } from './components/storefront/AuraStyleMirrorModal';
+import { StyleDiscoveryModal } from './components/storefront/StyleDiscoveryModal';
+
 const MainContainer: React.FC = () => {
   const { activeMode, activeNavTab, activePage } = useStore();
   
@@ -70,6 +75,10 @@ const MainContainer: React.FC = () => {
       <VirtualTryOnModal />
       <OutfitBuilderModal />
       <VisualSearchModal />
+      <QuickLookModal />
+      <FindYourAuraModal />
+      <AuraStyleMirrorModal />
+      <StyleDiscoveryModal />
       <Toast />
     </div>
   );

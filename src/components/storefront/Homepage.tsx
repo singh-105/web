@@ -30,10 +30,15 @@ export const Homepage: React.FC = () => {
     generateShoppingBrief,
     setIsStyleDnaModalOpen,
     getRecommendationRationale,
-    lookbooks
+    lookbooks,
+    setIsFindYourAuraOpen,
+    setIsAuraStyleMirrorOpen,
+    setIsStyleDiscoveryOpen,
+    setIsCartDrawerOpen,
+    showToast
   } = useStore();
 
-  const [timeLeft, setTimeLeft] = useState({ hours: 14, minutes: 32, seconds: 45 });
+  const [timeLeft, setTimeLeft] = useState({ hours: 3, minutes: 14, seconds: 27 });
   const [activeMoodHover, setActiveMoodHover] = useState<string | null>(null);
 
   useEffect(() => {
@@ -107,6 +112,63 @@ export const Homepage: React.FC = () => {
               className="bg-stone-900/90 hover:bg-stone-800 text-stone-100 border border-stone-700 px-8 py-4 rounded-full backdrop-blur-md transition-all text-xs uppercase tracking-[0.18em] font-semibold"
             >
               SHOP WOMEN
+            </button>
+
+            <button
+              onClick={() => setIsFindYourAuraOpen(true)}
+              className="bg-stone-950/90 hover:bg-stone-900 text-amber-400 border border-amber-500/40 px-8 py-4 rounded-full backdrop-blur-md transition-all text-xs uppercase tracking-[0.18em] font-bold flex items-center space-x-2"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>FIND YOUR AURA</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. NEW DROP SYSTEM (AURA DROP 04 COUNTDOWN BANNER) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-stone-900/90 border border-amber-500/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-xl shadow-2xl">
+          <div className="space-y-2 text-center md:text-left">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-[10px] font-bold uppercase tracking-wider">
+              <span className="bg-amber-500 text-stone-950 px-2.5 py-0.5 rounded-full">JUST DROPPED</span>
+              <span className="bg-stone-950 text-stone-300 border border-stone-800 px-2.5 py-0.5 rounded-full">LIMITED DROP 04</span>
+              <span className="bg-red-950/80 text-red-400 border border-red-800/40 px-2.5 py-0.5 rounded-full">ONLY 7 LEFT</span>
+            </div>
+            <h3 className="font-serif-heading text-2xl sm:text-3xl font-bold text-stone-100 uppercase tracking-wide">
+              AURA DROP 04 — AUTUMN SILHOUETTES
+            </h3>
+            <p className="text-xs text-stone-400 font-light">
+              Limited capsule run of 280 GSM heavyweight boxy jersey tees & Normandy flax linen pleats.
+            </p>
+          </div>
+
+          <div className="flex items-center space-x-6 shrink-0">
+            {/* Countdown Clock */}
+            <div className="flex items-center space-x-3 text-center">
+              <div className="bg-stone-950 border border-stone-800 px-3 py-2 rounded-xl">
+                <span className="text-xl font-bold text-amber-400 font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="block text-[9px] text-stone-500 font-semibold uppercase">HRS</span>
+              </div>
+              <span className="text-amber-500 font-bold text-lg">:</span>
+              <div className="bg-stone-950 border border-stone-800 px-3 py-2 rounded-xl">
+                <span className="text-xl font-bold text-amber-400 font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="block text-[9px] text-stone-500 font-semibold uppercase">MIN</span>
+              </div>
+              <span className="text-amber-500 font-bold text-lg">:</span>
+              <div className="bg-stone-950 border border-stone-800 px-3 py-2 rounded-xl">
+                <span className="text-xl font-bold text-amber-400 font-mono">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="block text-[9px] text-stone-500 font-semibold uppercase">SEC</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => {
+                setActivePage('catalog');
+                setSelectedCategory('New Arrivals');
+              }}
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-6 py-3.5 rounded-2xl text-xs uppercase tracking-wider transition-colors shadow-lg shadow-amber-500/10"
+            >
+              SHOP THE DROP
             </button>
           </div>
         </div>

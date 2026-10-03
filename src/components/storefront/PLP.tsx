@@ -10,7 +10,8 @@ import {
   Grid3X3,
   Search,
   RotateCcw,
-  ChevronDown
+  ChevronDown,
+  Eye
 } from 'lucide-react';
 import { useStore } from '../../context/StoreContext';
 
@@ -39,7 +40,8 @@ export const PLP: React.FC = () => {
     setActivePage,
     addToCart,
     toggleWishlist,
-    wishlistProductIds
+    wishlistProductIds,
+    setQuickLookProduct
   } = useStore();
 
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -265,10 +267,24 @@ export const PLP: React.FC = () => {
                         e.stopPropagation();
                         toggleWishlist(prod.id);
                       }}
-                      className="absolute top-3 right-3 p-2 bg-stone-950/70 hover:bg-stone-950 text-stone-200 rounded-full backdrop-blur-md transition-colors"
+                      className="absolute top-3 right-3 p-2 bg-stone-950/70 hover:bg-stone-950 text-stone-200 rounded-full backdrop-blur-md transition-colors z-10"
                     >
                       <Heart className={`w-4 h-4 ${wishlistProductIds.includes(prod.id) ? 'fill-amber-500 text-amber-500' : ''}`} />
                     </button>
+
+                    {/* Quick Look Hover Button */}
+                    <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <button
+                        onClick={e => {
+                          e.stopPropagation();
+                          setQuickLookProduct(prod);
+                        }}
+                        className="w-full py-2.5 bg-stone-950/90 hover:bg-amber-500 hover:text-stone-950 text-stone-200 text-xs font-bold uppercase tracking-wider rounded-xl backdrop-blur-md transition-all flex items-center justify-center space-x-1.5 shadow-lg"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>QUICK LOOK</span>
+                      </button>
+                    </div>
                   </div>
 
                   <div className="p-3.5 space-y-1.5">

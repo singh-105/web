@@ -118,6 +118,14 @@ interface StoreContextType {
   setIsOutfitBuilderOpen: (open: boolean) => void;
   isVisualSearchOpen: boolean;
   setIsVisualSearchOpen: (open: boolean) => void;
+  quickLookProduct: Product | null;
+  setQuickLookProduct: (product: Product | null) => void;
+  isFindYourAuraOpen: boolean;
+  setIsFindYourAuraOpen: (open: boolean) => void;
+  isAuraStyleMirrorOpen: boolean;
+  setIsAuraStyleMirrorOpen: (open: boolean) => void;
+  isStyleDiscoveryOpen: boolean;
+  setIsStyleDiscoveryOpen: (open: boolean) => void;
 
   // Customer & Auth
   currentCustomer: Customer;
@@ -209,6 +217,10 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const [isTryOnOpen, setIsTryOnOpen] = useState(false);
   const [isOutfitBuilderOpen, setIsOutfitBuilderOpen] = useState(false);
   const [isVisualSearchOpen, setIsVisualSearchOpen] = useState(false);
+  const [quickLookProduct, setQuickLookProduct] = useState<Product | null>(null);
+  const [isFindYourAuraOpen, setIsFindYourAuraOpen] = useState(false);
+  const [isAuraStyleMirrorOpen, setIsAuraStyleMirrorOpen] = useState(false);
+  const [isStyleDiscoveryOpen, setIsStyleDiscoveryOpen] = useState(false);
 
   // Customer & Store Telemetry
   const [customers, setCustomers] = useState<Customer[]>(initialCustomers);
@@ -901,6 +913,14 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setIsOutfitBuilderOpen,
     isVisualSearchOpen,
     setIsVisualSearchOpen,
+    quickLookProduct,
+    setQuickLookProduct,
+    isFindYourAuraOpen,
+    setIsFindYourAuraOpen,
+    isAuraStyleMirrorOpen,
+    setIsAuraStyleMirrorOpen,
+    isStyleDiscoveryOpen,
+    setIsStyleDiscoveryOpen,
     currentCustomer,
     orders,
     placeOrder,

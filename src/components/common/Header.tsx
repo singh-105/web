@@ -32,6 +32,9 @@ export const Header: React.FC = () => {
     setIsAiAssistantOpen,
     setIsTryOnOpen,
     setIsVisualSearchOpen,
+    setIsFindYourAuraOpen,
+    setIsAuraStyleMirrorOpen,
+    setIsStyleDiscoveryOpen,
     setSelectedCategory,
     products
   } = useStore();
@@ -202,13 +205,18 @@ export const Header: React.FC = () => {
             <div className="h-4 w-[1px] bg-stone-800"></div>
 
             <button
-              onClick={() => {
-                setActiveNavTab('style');
-                setActivePage('look_engine');
-              }}
-              className="text-stone-400 hover:text-stone-100 transition-colors py-2"
+              onClick={() => setIsFindYourAuraOpen(true)}
+              className="text-amber-400 hover:text-amber-300 transition-colors py-2 flex items-center space-x-1 font-bold"
             >
-              Style Studio
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>FIND YOUR AURA</span>
+            </button>
+
+            <button
+              onClick={() => setIsAuraStyleMirrorOpen(true)}
+              className="text-stone-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Style Mirror
             </button>
 
             <button

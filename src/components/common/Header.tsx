@@ -73,55 +73,25 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 glass-header transition-all duration-300">
       {/* Top Promotional Bar */}
-      <div className="bg-stone-900 text-stone-300 text-[11px] py-1.5 px-4 flex items-center justify-between border-b border-stone-800/80 font-sans tracking-wide">
-        <div className="flex items-center space-x-3 overflow-hidden whitespace-nowrap">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-          <span className="font-semibold uppercase tracking-wider text-stone-200">
+      <div className="bg-stone-900 text-stone-300 text-[10px] sm:text-[11px] py-1.5 px-4 text-center border-b border-stone-800/80 font-sans tracking-widest uppercase">
+        <div className="flex items-center justify-center space-x-2 overflow-hidden whitespace-nowrap">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+          <span className="font-semibold text-stone-200">
             FREE EXPRESS SHIPPING ON ORDERS OVER ₹2,000
           </span>
           <span className="text-stone-700 hidden sm:inline">•</span>
-          <span className="text-stone-400 hidden sm:inline">EASY 14-DAY DOORSTEP RETURNS</span>
+          <span className="text-stone-400 hidden sm:inline">EASY 14-DAY RETURNS</span>
           <span className="text-stone-700 hidden md:inline">•</span>
           <span className="text-amber-400 font-semibold hidden md:inline">USE CODE: AURA10 FOR 10% OFF</span>
-        </div>
-
-        {/* View Switcher for Reviewers */}
-        <div className="flex items-center space-x-2 shrink-0">
-          <div className="flex items-center bg-stone-950 border border-stone-800 rounded-full p-0.5 text-[10px]">
-            <button
-              onClick={() => {
-                setActiveMode('storefront');
-                setActivePage('home');
-              }}
-              className={`px-3 py-0.5 rounded-full font-semibold transition-all ${
-                activeMode === 'storefront'
-                  ? 'bg-stone-100 text-stone-950 shadow-sm'
-                  : 'text-stone-400 hover:text-stone-200'
-              }`}
-            >
-              Storefront
-            </button>
-            <button
-              onClick={() => setActiveMode('owner')}
-              className={`px-3 py-0.5 rounded-full font-semibold transition-all flex items-center space-x-1 ${
-                activeMode === 'owner'
-                  ? 'bg-amber-500 text-stone-950 shadow-sm'
-                  : 'text-stone-400 hover:text-stone-200'
-              }`}
-            >
-              <ShieldAlert className="w-3 h-3" />
-              <span>Store Pulse Admin</span>
-            </button>
-          </div>
         </div>
       </div>
 
       {/* Main Fashion Brand Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         {/* Mobile Menu Trigger */}
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="lg:hidden p-2 text-stone-300 hover:text-white transition-colors"
+          className="lg:hidden p-2 -ml-2 text-stone-300 hover:text-amber-400 transition-colors"
           aria-label="Open Navigation"
         >
           <Menu className="w-6 h-6" />
@@ -137,10 +107,10 @@ export const Header: React.FC = () => {
             }}
             className="group flex flex-col items-start text-left focus:outline-none"
           >
-            <span className="font-serif-heading text-2xl sm:text-3xl tracking-[0.2em] text-stone-100 group-hover:text-amber-400 transition-colors uppercase font-medium">
+            <span className="font-serif-heading text-xl sm:text-2xl tracking-[0.2em] text-stone-100 group-hover:text-amber-400 transition-colors uppercase font-bold">
               {brandConfig.brandName}
             </span>
-            <span className="text-[8px] tracking-[0.35em] text-stone-400 uppercase -mt-1 font-sans">
+            <span className="text-[7px] sm:text-[8px] tracking-[0.35em] text-stone-400 uppercase -mt-1 font-sans">
               ATELIER & COMMERCE
             </span>
           </button>

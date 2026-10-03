@@ -28,9 +28,9 @@ export const Homepage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-16 sm:space-y-20 pb-20">
       {/* 1. HERO CAMPAIGN (ULTRA-MINIMAL HIGH FASHION) */}
-      <section className="relative h-[85vh] sm:h-[90vh] flex items-end justify-start overflow-hidden">
+      <section className="relative min-h-[70vh] sm:min-h-[85vh] flex items-end justify-start overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=2000"
@@ -40,15 +40,15 @@ export const Homepage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 space-y-6 w-full">
-          <div className="inline-flex items-center space-x-2 bg-stone-950/70 border border-stone-800 px-3.5 py-1.5 rounded-full backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-amber-400"></span>
-            <span className="text-[11px] uppercase tracking-[0.25em] font-bold text-amber-300">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-16 space-y-4 sm:space-y-6 w-full">
+          <div className="inline-flex items-center space-x-2 bg-stone-950/70 border border-stone-800 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full backdrop-blur-md">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400"></span>
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-bold text-amber-300">
               AUTUMN / WINTER '26
             </span>
           </div>
 
-          <h1 className="font-serif-heading text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-stone-100 uppercase max-w-3xl leading-none">
+          <h1 className="font-serif-heading text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-stone-100 uppercase max-w-3xl leading-none">
             Contemporary Urban Elegance
           </h1>
 
@@ -56,13 +56,13 @@ export const Homepage: React.FC = () => {
             Crafted for the modern silhouette. Heavyweight organic cottons, Normandy flax linens, and Italian tailoring.
           </p>
 
-          <div className="pt-2 flex flex-wrap items-center gap-3">
+          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <button
               onClick={() => {
                 setActivePage('catalog');
                 setSelectedCategory('All');
               }}
-              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-8 py-3.5 rounded-full transition-all text-xs uppercase tracking-[0.18em] flex items-center space-x-2 shadow-xl shadow-amber-500/10"
+              className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-6 sm:px-8 py-3.5 rounded-full transition-all text-xs uppercase tracking-[0.18em] flex items-center justify-center space-x-2 shadow-xl shadow-amber-500/10"
             >
               <span>EXPLORE COLLECTION</span>
               <ArrowRight className="w-4 h-4" />
@@ -70,7 +70,7 @@ export const Homepage: React.FC = () => {
 
             <button
               onClick={() => setIsFindYourAuraOpen(true)}
-              className="bg-stone-950/80 hover:bg-stone-900 text-amber-400 border border-amber-500/40 px-6 py-3.5 rounded-full backdrop-blur-md transition-all text-xs uppercase tracking-[0.18em] font-bold flex items-center space-x-2"
+              className="bg-stone-950/80 hover:bg-stone-900 text-amber-400 border border-amber-500/40 px-6 py-3.5 rounded-full backdrop-blur-md transition-all text-xs uppercase tracking-[0.18em] font-bold flex items-center justify-center space-x-2"
             >
               <Sparkles className="w-4 h-4" />
               <span>FIND YOUR AURA</span>

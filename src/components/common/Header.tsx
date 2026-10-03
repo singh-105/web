@@ -375,23 +375,62 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-xl flex flex-col animate-fade-in lg:hidden">
+        <div className="fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-xl flex flex-col animate-fade-in lg:hidden">
           <div className="p-4 flex items-center justify-between border-b border-stone-800">
-            <span className="font-serif-heading text-xl text-stone-100">{brandConfig.brandName}</span>
+            <span className="font-serif-heading text-xl text-stone-100 uppercase tracking-widest">{brandConfig.brandName}</span>
             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-stone-300 hover:text-white">
               <X className="w-6 h-6" />
             </button>
           </div>
 
           <div className="p-6 space-y-6 overflow-y-auto flex-1">
-            <div className="space-y-3">
-              <p className="text-xs uppercase tracking-widest text-stone-500 font-semibold">Categories</p>
+            {/* Signature Experience Mobile Buttons */}
+            <div className="space-y-2.5">
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsFindYourAuraOpen(true);
+                }}
+                className="w-full p-3.5 rounded-2xl bg-amber-500 text-stone-950 font-bold text-xs uppercase tracking-wider flex items-center justify-between shadow-lg"
+              >
+                <span className="flex items-center space-x-2">
+                  <Sparkles className="w-4 h-4" />
+                  <span>FIND YOUR AURA</span>
+                </span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsAuraStyleMirrorOpen(true);
+                  }}
+                  className="p-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-200 font-semibold text-xs text-left"
+                >
+                  Style Mirror
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsStyleDiscoveryOpen(true);
+                  }}
+                  className="p-3 rounded-xl bg-stone-900 border border-stone-800 text-stone-200 font-semibold text-xs text-left"
+                >
+                  Style Discovery
+                </button>
+              </div>
+            </div>
+
+            {/* Fashion Categories */}
+            <div className="space-y-2 pt-2">
+              <p className="text-[10px] uppercase tracking-widest text-amber-400 font-bold">Fashion Categories</p>
               {[
-                { label: 'Men', cat: 'Men' },
-                { label: 'Women', cat: 'Women' },
-                { label: 'Kids', cat: 'Kids' },
-                { label: 'Accessories', cat: 'Accessories' },
-                { label: 'New Arrivals', cat: 'New Arrivals' }
+                { label: 'Men Apparel', cat: 'Men' },
+                { label: 'Women Dresses & Blazers', cat: 'Women' },
+                { label: 'New In Drop 04', cat: 'New Arrivals' },
+                { label: 'All Collections', cat: 'All' },
+                { label: 'Accessories & Footwear', cat: 'Accessories' }
               ].map(item => (
                 <button
                   key={item.label}
@@ -400,7 +439,7 @@ export const Header: React.FC = () => {
                     setActivePage('catalog');
                     setIsMobileMenuOpen(false);
                   }}
-                  className="w-full text-left text-lg font-medium text-stone-200 hover:text-amber-400 flex items-center justify-between py-2 border-b border-stone-800/40"
+                  className="w-full text-left text-base font-medium text-stone-200 hover:text-amber-400 flex items-center justify-between py-2.5 border-b border-stone-900"
                 >
                   <span>{item.label}</span>
                   <ChevronRight className="w-4 h-4 text-stone-600" />
@@ -408,30 +447,35 @@ export const Header: React.FC = () => {
               ))}
             </div>
 
+            {/* View Mode Switcher */}
             <div className="pt-4 border-t border-stone-800 space-y-3">
-              <button
-                onClick={() => {
-                  setActiveNavTab('style');
-                  setActivePage('look_engine');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full text-left text-base font-semibold text-amber-400 flex items-center justify-between"
-              >
-                <span>Style Studio & Look Remix</span>
-                <ChevronRight className="w-4 h-4 text-amber-400" />
-              </button>
-
-              <button
-                onClick={() => {
-                  setActiveNavTab('wardrobe');
-                  setActivePage('account');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full text-left text-base font-semibold text-stone-200 flex items-center justify-between"
-              >
-                <span>My Digital Wardrobe</span>
-                <ChevronRight className="w-4 h-4 text-stone-600" />
-              </button>
+              <p className="text-[10px] uppercase tracking-widest text-stone-500 font-bold">Store Platform Mode</p>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => {
+                    setActiveMode('storefront');
+                    setActivePage('home');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`p-3 rounded-xl border text-xs font-bold ${
+                    activeMode === 'storefront' ? 'bg-stone-100 text-stone-950 border-stone-100' : 'bg-stone-900 text-stone-400 border-stone-800'
+                  }`}
+                >
+                  Storefront
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveMode('owner');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`p-3 rounded-xl border text-xs font-bold flex items-center justify-center space-x-1 ${
+                    activeMode === 'owner' ? 'bg-amber-500 text-stone-950 border-amber-500' : 'bg-stone-900 text-amber-400 border-stone-800'
+                  }`}
+                >
+                  <ShieldAlert className="w-3.5 h-3.5" />
+                  <span>Store Pulse</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

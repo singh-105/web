@@ -370,6 +370,21 @@ export const PDP: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile Sticky Add to Bag Bar */}
+      <div className="fixed bottom-0 inset-x-0 z-30 p-3 bg-stone-950/95 border-t border-stone-800 backdrop-blur-lg lg:hidden flex items-center space-x-3 shadow-2xl">
+        <div className="flex-1 min-w-0">
+          <p className="text-xs font-bold text-stone-100 truncate">{product.name}</p>
+          <p className="text-xs font-bold text-amber-400">₹{product.basePrice.toLocaleString('en-IN')}</p>
+        </div>
+        <button
+          onClick={() => activeVariant && addToCart(product, activeVariant.id, 1)}
+          className="bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold px-5 py-3 rounded-xl uppercase tracking-wider text-xs flex items-center space-x-1.5 shadow-lg shrink-0"
+        >
+          <ShoppingBag className="w-4 h-4" />
+          <span>ADD TO BAG</span>
+        </button>
+      </div>
     </div>
   );
 };

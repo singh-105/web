@@ -1,6 +1,6 @@
 export type FitType = 'Oversized' | 'Slim' | 'Regular' | 'Relaxed' | 'Tailored';
 export type MaterialType = 'Organic Cotton' | 'Linen' | 'Italian Silk' | 'Denim' | 'Cashmere' | 'Wool Blend' | 'Polyester';
-export type OccasionType = 'Casual' | 'Party' | 'Wedding' | 'Summer' | 'Formal' | 'Streetwear' | 'Workwear' | 'Vacation' | 'Date Night' | 'Office' | 'Weekend';
+export type OccasionType = 'Casual' | 'Party' | 'Wedding' | 'Summer' | 'Winter' | 'Formal' | 'Streetwear' | 'Workwear' | 'Vacation' | 'Date Night' | 'Office' | 'Weekend';
 
 export interface ProductVariant {
   id: string;

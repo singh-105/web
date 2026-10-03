@@ -359,6 +359,374 @@ export const initialProducts: Product[] = [
       { id: 'v6-tan-m', colorName: 'Tobacco Suede', colorHex: '#8c593b', size: 'M', sku: 'AL-ICB-TOB-M', stock: 3, price: 7999, originalPrice: 9999 },
       { id: 'v6-tan-l', colorName: 'Tobacco Suede', colorHex: '#8c593b', size: 'L', sku: 'AL-ICB-TOB-L', stock: 5, price: 7999, originalPrice: 9999 }
     ]
+  },
+  {
+    id: 'prod-7',
+    name: 'Structured Double-Breasted Wool Blazer',
+    slug: 'structured-double-breasted-wool-blazer',
+    brand: 'AURA LUXE',
+    category: 'Women',
+    subCategory: 'Blazers',
+    description: 'Power tailoring in premium Merino wool blend. Features sharp peak lapels, padded shoulders, dual front flap pockets, and horn button fastenings.',
+    highlights: [
+      '80% Merino Wool, 20% Recycled Polyester',
+      'Structured peak lapel architecture',
+      'Full viscose lining for effortless layering',
+      'Dual rear vents'
+    ],
+    careInstructions: [
+      'Dry clean only',
+      'Cool iron with cloth'
+    ],
+    basePrice: 6499,
+    originalPrice: 8999,
+    discountPercentage: 27,
+    rating: 4.9,
+    reviewCount: 38,
+    images: [
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Tailored',
+    material: 'Wool Blend',
+    occasion: ['Office', 'Formal', 'Workwear', 'Date Night'],
+    tags: ['Tailoring', 'Power Dressing', 'New Arrival'],
+    isNewArrival: true,
+    isTrending: true,
+    salesVelocity: 'high',
+    createdAt: '2026-09-25',
+    personalityStyling: [
+      { personality: 'Office', suggestedCombo: 'Pair with Architectural Wide-Leg Trousers & Pointed Pumps.' },
+      { personality: 'Minimal', suggestedCombo: 'Throw over a Monochrome White Tee with Raw Edge Denim.' }
+    ],
+    variants: [
+      { id: 'v7-blk-xs', colorName: 'Obsidian Black', colorHex: '#121212', size: 'XS', sku: 'AL-WBLZ-BLK-XS', stock: 4, price: 6499, originalPrice: 8999 },
+      { id: 'v7-blk-s', colorName: 'Obsidian Black', colorHex: '#121212', size: 'S', sku: 'AL-WBLZ-BLK-S', stock: 7, price: 6499, originalPrice: 8999 },
+      { id: 'v7-blk-m', colorName: 'Obsidian Black', colorHex: '#121212', size: 'M', sku: 'AL-WBLZ-BLK-M', stock: 5, price: 6499, originalPrice: 8999 },
+      { id: 'v7-camel-s', colorName: 'Camel Melange', colorHex: '#c19a6b', size: 'S', sku: 'AL-WBLZ-CML-S', stock: 6, price: 6499, originalPrice: 8999 },
+      { id: 'v7-camel-m', colorName: 'Camel Melange', colorHex: '#c19a6b', size: 'M', sku: 'AL-WBLZ-CML-M', stock: 3, price: 6499, originalPrice: 8999 }
+    ]
+  },
+  {
+    id: 'prod-8',
+    name: 'Relaxed Resort Knit Cuban Shirt',
+    slug: 'relaxed-resort-knit-cuban-shirt',
+    brand: 'AURA LUXE',
+    category: 'Men',
+    subCategory: 'Shirts',
+    description: 'Tactile open-weave knit shirt with open camp collar. Designed for breezy summer layering and casual resort sophistication.',
+    highlights: [
+      '100% Breathable Cotton Crochet Knit',
+      'Camp collar silhouette',
+      'Natural mother-of-pearl buttons',
+      'Straight relaxed hem'
+    ],
+    careInstructions: [
+      'Hand wash cold',
+      'Dry flat to preserve shape'
+    ],
+    basePrice: 2199,
+    originalPrice: 2999,
+    discountPercentage: 26,
+    rating: 4.7,
+    reviewCount: 51,
+    images: [
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Relaxed',
+    material: 'Organic Cotton',
+    occasion: ['Summer', 'Vacation', 'Party', 'Casual'],
+    tags: ['Resortwear', 'Knitwear', 'Best Seller'],
+    isBestSeller: true,
+    isTrending: true,
+    salesVelocity: 'high',
+    createdAt: '2026-09-12',
+    variants: [
+      { id: 'v8-oat-s', colorName: 'Oatmeal Beige', colorHex: '#e3dcd1', size: 'S', sku: 'AL-RKS-OAT-S', stock: 9, price: 2199, originalPrice: 2999 },
+      { id: 'v8-oat-m', colorName: 'Oatmeal Beige', colorHex: '#e3dcd1', size: 'M', sku: 'AL-RKS-OAT-M', stock: 11, price: 2199, originalPrice: 2999 },
+      { id: 'v8-oat-l', colorName: 'Oatmeal Beige', colorHex: '#e3dcd1', size: 'L', sku: 'AL-RKS-OAT-L', stock: 4, price: 2199, originalPrice: 2999 },
+      { id: 'v8-sage-m', colorName: 'Sage Green', colorHex: '#9caf88', size: 'M', sku: 'AL-RKS-SGE-M', stock: 8, price: 2199, originalPrice: 2999 }
+    ]
+  },
+  {
+    id: 'prod-9',
+    name: 'Structured Cropped Knit Cardigan',
+    slug: 'structured-cropped-knit-cardigan',
+    brand: 'AURA LUXE',
+    category: 'Women',
+    subCategory: 'Knitwear',
+    description: 'Chic ribbed knit cardigan cut to a contemporary cropped waistline. Features oversized tortoise shell buttons and subtle balloon sleeves.',
+    highlights: [
+      'Cotton & Fine Merino Blend',
+      'Heavy ribbed texture',
+      'Deep V-neckline',
+      'Cropped waistband'
+    ],
+    careInstructions: [
+      'Hand wash cold inside out',
+      'Do not wring, dry flat'
+    ],
+    basePrice: 2799,
+    originalPrice: 3999,
+    discountPercentage: 30,
+    rating: 4.8,
+    reviewCount: 29,
+    images: [
+      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Slim',
+    material: 'Wool Blend',
+    occasion: ['Casual', 'Date Night', 'Weekend', 'Office'],
+    tags: ['Sale', 'Knitwear', 'Essential'],
+    isNewArrival: true,
+    salesVelocity: 'medium',
+    createdAt: '2026-09-18',
+    variants: [
+      { id: 'v9-crm-s', colorName: 'Cream White', colorHex: '#fcfbf7', size: 'S', sku: 'AL-CKC-CRM-S', stock: 5, price: 2799, originalPrice: 3999 },
+      { id: 'v9-crm-m', colorName: 'Cream White', colorHex: '#fcfbf7', size: 'M', sku: 'AL-CKC-CRM-M', stock: 8, price: 2799, originalPrice: 3999 },
+      { id: 'v9-blk-s', colorName: 'Obsidian Black', colorHex: '#121212', size: 'S', sku: 'AL-CKC-BLK-S', stock: 6, price: 2799, originalPrice: 3999 }
+    ]
+  },
+  {
+    id: 'prod-10',
+    name: 'Architectural Wide-Leg Pleated Trousers',
+    slug: 'architectural-wide-leg-pleated-trousers',
+    brand: 'AURA LUXE',
+    category: 'Women',
+    subCategory: 'Trousers',
+    description: 'High-waisted trousers with exaggerated double front pleats and fluid wide-leg volume. Cut from crease-resistant Italian crepe fabric.',
+    highlights: [
+      'Italian Crepe Polyester Blend',
+      'Extended waistband with hidden tab closure',
+      'Full length pooling hem line',
+      'Deep side pockets'
+    ],
+    careInstructions: [
+      'Machine wash gentle cold',
+      'Line dry in shade'
+    ],
+    basePrice: 3499,
+    originalPrice: 4699,
+    discountPercentage: 25,
+    rating: 4.9,
+    reviewCount: 44,
+    images: [
+      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Relaxed',
+    material: 'Linen',
+    occasion: ['Workwear', 'Office', 'Party', 'Formal'],
+    tags: ['Tailored', 'Best Seller', 'Minimalist'],
+    isBestSeller: true,
+    salesVelocity: 'high',
+    createdAt: '2026-08-28',
+    variants: [
+      { id: 'v10-taupe-s', colorName: 'Charcoal Taupe', colorHex: '#4a4646', size: 'S', sku: 'AL-WLT-TP-S', stock: 7, price: 3499, originalPrice: 4699 },
+      { id: 'v10-taupe-m', colorName: 'Charcoal Taupe', colorHex: '#4a4646', size: 'M', sku: 'AL-WLT-TP-M', stock: 12, price: 3499, originalPrice: 4699 },
+      { id: 'v10-taupe-l', colorName: 'Charcoal Taupe', colorHex: '#4a4646', size: 'L', sku: 'AL-WLT-TP-L', stock: 4, price: 3499, originalPrice: 4699 }
+    ]
+  },
+  {
+    id: 'prod-11',
+    name: 'Minimalist Heavyweight Fleece Hoodie',
+    slug: 'minimalist-heavyweight-fleece-hoodie',
+    brand: 'AURA LUXE',
+    category: 'Men',
+    subCategory: 'Hoodies',
+    description: '450 GSM luxury brushed fleece pullover hoodie with zero exterior branding. Built with a double-layered hood and thick ribbed cuffs for boxy drape.',
+    highlights: [
+      '450 GSM Ultra-Heavy Organic Fleece',
+      'Double-layer self-fabric hood',
+      'Kangaroo pocket with bartack reinforcement',
+      'Pre-shrunk to lock in silhouette'
+    ],
+    careInstructions: [
+      'Wash inside out cold',
+      'Tumble dry low'
+    ],
+    basePrice: 2999,
+    originalPrice: 3899,
+    discountPercentage: 23,
+    rating: 4.8,
+    reviewCount: 63,
+    images: [
+      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Oversized',
+    material: 'Organic Cotton',
+    occasion: ['Casual', 'Streetwear', 'Weekend', 'Winter'],
+    tags: ['Streetwear', 'Best Seller', 'Heavyweight'],
+    isBestSeller: true,
+    salesVelocity: 'high',
+    createdAt: '2026-09-02',
+    variants: [
+      { id: 'v11-ash-s', colorName: 'Ash Grey', colorHex: '#b2b5b8', size: 'S', sku: 'AL-MHFH-ASH-S', stock: 10, price: 2999, originalPrice: 3899 },
+      { id: 'v11-ash-m', colorName: 'Ash Grey', colorHex: '#b2b5b8', size: 'M', sku: 'AL-MHFH-ASH-M', stock: 14, price: 2999, originalPrice: 3899 },
+      { id: 'v11-ash-l', colorName: 'Ash Grey', colorHex: '#b2b5b8', size: 'L', sku: 'AL-MHFH-ASH-L', stock: 8, price: 2999, originalPrice: 3899 },
+      { id: 'v11-blk-m', colorName: 'Obsidian Black', colorHex: '#121212', size: 'M', sku: 'AL-MHFH-BLK-M', stock: 15, price: 2999, originalPrice: 3899 }
+    ]
+  },
+  {
+    id: 'prod-12',
+    name: 'Handcrafted Suede Penny Loafers',
+    slug: 'handcrafted-suede-penny-loafers',
+    brand: 'AURA LUXE',
+    category: 'Accessories',
+    subCategory: 'Footwear',
+    description: 'Timeless penny loafers in rich Italian suede with lightweight stacked leather soles. Designed for unlined flex comfort from day to night.',
+    highlights: [
+      'Italian Water-Resistant Suede',
+      'Blake stitched construction',
+      'Cushioned arch support footbed',
+      'Hand-stitched apron toe'
+    ],
+    careInstructions: [
+      'Apply suede protection spray before use',
+      'Brush regularly with suede brush'
+    ],
+    basePrice: 5499,
+    originalPrice: 6999,
+    discountPercentage: 21,
+    rating: 4.9,
+    reviewCount: 17,
+    images: [
+      'https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Regular',
+    material: 'Wool Blend',
+    occasion: ['Office', 'Formal', 'Date Night', 'Party'],
+    tags: ['Footwear', 'Craftsmanship', 'Tailored'],
+    isTrending: true,
+    salesVelocity: 'medium',
+    createdAt: '2026-09-14',
+    variants: [
+      { id: 'v12-tan-m', colorName: 'Chestnut Brown', colorHex: '#5c3a21', size: 'M', sku: 'AL-SPL-BRN-M', stock: 4, price: 5499, originalPrice: 6999 },
+      { id: 'v12-tan-l', colorName: 'Chestnut Brown', colorHex: '#5c3a21', size: 'L', sku: 'AL-SPL-BRN-L', stock: 6, price: 5499, originalPrice: 6999 }
+    ]
+  },
+  {
+    id: 'prod-13',
+    name: 'Architectural Leather Tote Bag',
+    slug: 'architectural-leather-tote-bag',
+    brand: 'AURA LUXE',
+    category: 'Accessories',
+    subCategory: 'Bags',
+    description: 'Structured everyday tote sculpted from pebble-grain Italian leather. Features laptop compartment (fits up to 16"), magnetic closure, and polished brass studs.',
+    highlights: [
+      '100% Full Grain Pebble Italian Leather',
+      'Padded 16" laptop sleeve',
+      'Interior zippered safety pocket',
+      'Reinforced shoulder straps'
+    ],
+    careInstructions: [
+      'Wipe clean with soft damp cloth',
+      'Apply leather conditioner quarterly'
+    ],
+    basePrice: 4999,
+    originalPrice: 6499,
+    discountPercentage: 23,
+    rating: 5.0,
+    reviewCount: 33,
+    images: [
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Regular',
+    material: 'Italian Silk',
+    occasion: ['Office', 'Workwear', 'Vacation', 'Casual'],
+    tags: ['Accessories', 'Leather Goods', 'Best Seller'],
+    isBestSeller: true,
+    salesVelocity: 'high',
+    createdAt: '2026-08-19',
+    variants: [
+      { id: 'v13-blk-onesize', colorName: 'Obsidian Black', colorHex: '#121212', size: 'M', sku: 'AL-ALT-BLK-OS', stock: 10, price: 4999, originalPrice: 6499 },
+      { id: 'v13-tan-onesize', colorName: 'Cognac Leather', colorHex: '#9e5a2b', size: 'M', sku: 'AL-ALT-COG-OS', stock: 5, price: 4999, originalPrice: 6499 }
+    ]
+  },
+  {
+    id: 'prod-14',
+    name: 'Vintage Utility Cargo Pants',
+    slug: 'vintage-utility-cargo-pants',
+    brand: 'AURA LUXE',
+    category: 'Men',
+    subCategory: 'Trousers',
+    description: 'Heavy cotton twill cargo trousers with 3D modular leg pockets, articulated knee darts, and adjustable drawstring ankle cuffs.',
+    highlights: [
+      '320 GSM Cotton Twill weave',
+      'Double knee reinforcement panels',
+      '6 multi-functional pockets',
+      'Ankle toggle cinch cord'
+    ],
+    careInstructions: [
+      'Machine wash cold with like colors',
+      'Tumble dry low'
+    ],
+    basePrice: 2899,
+    originalPrice: 3799,
+    discountPercentage: 23,
+    rating: 4.7,
+    reviewCount: 40,
+    images: [
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Relaxed',
+    material: 'Organic Cotton',
+    occasion: ['Streetwear', 'Casual', 'Weekend'],
+    tags: ['Cargo', 'Streetwear', 'New Arrival'],
+    isNewArrival: true,
+    salesVelocity: 'high',
+    createdAt: '2026-09-22',
+    variants: [
+      { id: 'v14-olv-s', colorName: 'Military Olive', colorHex: '#4b5320', size: 'S', sku: 'AL-VUC-OLV-S', stock: 6, price: 2899, originalPrice: 3799 },
+      { id: 'v14-olv-m', colorName: 'Military Olive', colorHex: '#4b5320', size: 'M', sku: 'AL-VUC-OLV-M', stock: 9, price: 2899, originalPrice: 3799 },
+      { id: 'v14-olv-l', colorName: 'Military Olive', colorHex: '#4b5320', size: 'L', sku: 'AL-VUC-OLV-L', stock: 5, price: 2899, originalPrice: 3799 }
+    ]
+  },
+  {
+    id: 'prod-15',
+    name: 'Cascading Pleated Satin Midi Skirt',
+    slug: 'cascading-pleated-satin-midi-skirt',
+    brand: 'AURA LUXE',
+    category: 'Women',
+    subCategory: 'Skirts',
+    description: 'High-shine accordion pleated midi skirt with high waistband. Designed to movement elegantly with every step in lustrous satin finish.',
+    highlights: [
+      'Silky Liquid Satin Polyester',
+      'Heat-set accordion pleats hold form',
+      'Concealed elasticated waist seam',
+      'Midi hemline finish'
+    ],
+    careInstructions: [
+      'Hand wash cold',
+      'Hang dry, do not iron pleats'
+    ],
+    basePrice: 3199,
+    originalPrice: 4299,
+    discountPercentage: 25,
+    rating: 4.8,
+    reviewCount: 22,
+    images: [
+      'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&q=80&w=1000',
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&q=80&w=1000'
+    ],
+    fit: 'Regular',
+    material: 'Italian Silk',
+    occasion: ['Party', 'Date Night', 'Formal', 'Wedding'],
+    tags: ['Satin', 'Elegant', 'Trending'],
+    isTrending: true,
+    salesVelocity: 'high',
+    createdAt: '2026-09-15',
+    variants: [
+      { id: 'v15-slv-s', colorName: 'Liquid Silver', colorHex: '#c0c0c0', size: 'S', sku: 'AL-CPS-SLV-S', stock: 4, price: 3199, originalPrice: 4299 },
+      { id: 'v15-slv-m', colorName: 'Liquid Silver', colorHex: '#c0c0c0', size: 'M', sku: 'AL-CPS-SLV-M', stock: 7, price: 3199, originalPrice: 4299 },
+      { id: 'v15-blk-s', colorName: 'Obsidian Black', colorHex: '#121212', size: 'S', sku: 'AL-CPS-BLK-S', stock: 8, price: 3199, originalPrice: 4299 }
+    ]
   }
 ];
 

@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-stone-950 text-stone-300 border-t border-stone-800/80 pt-16 pb-12">
       {/* Value Proposition Badges */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 border-b border-stone-800">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="flex items-start space-x-3">
             <Truck className="w-6 h-6 text-amber-400 shrink-0 mt-1" />
             <div>

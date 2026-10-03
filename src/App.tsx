@@ -25,6 +25,7 @@ import { QuickLookModal } from './components/storefront/QuickLookModal';
 import { FindYourAuraModal } from './components/storefront/FindYourAuraModal';
 import { AuraStyleMirrorModal } from './components/storefront/AuraStyleMirrorModal';
 import { StyleDiscoveryModal } from './components/storefront/StyleDiscoveryModal';
+import { MobileNavigationDrawer } from './components/common/MobileNavigationDrawer';
 
 const MainContainer: React.FC = () => {
   const { activeMode, activeNavTab, activePage } = useStore();
@@ -68,6 +69,7 @@ const MainContainer: React.FC = () => {
       <Footer />
 
       {/* Global Interactive Modals & Features */}
+      <MobileNavigationDrawer />
       <CartDrawer />
       <StyleDnaModal />
       <FashionCanvasModal />

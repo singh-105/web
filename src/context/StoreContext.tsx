@@ -110,6 +110,8 @@ interface StoreContextType {
   // Modals & Drawers
   isCartDrawerOpen: boolean;
   setIsCartDrawerOpen: (open: boolean) => void;
+  isMobileMenuOpen: boolean;
+  setIsMobileMenuOpen: (open: boolean) => void;
   isAiAssistantOpen: boolean;
   setIsAiAssistantOpen: (open: boolean) => void;
   isTryOnOpen: boolean;
@@ -213,6 +215,7 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // UI Modals
   const [isCartDrawerOpen, setIsCartDrawerOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
   const [isTryOnOpen, setIsTryOnOpen] = useState(false);
   const [isOutfitBuilderOpen, setIsOutfitBuilderOpen] = useState(false);
@@ -905,6 +908,8 @@ export const StoreProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     cartTotal,
     isCartDrawerOpen,
     setIsCartDrawerOpen,
+    isMobileMenuOpen,
+    setIsMobileMenuOpen,
     isAiAssistantOpen,
     setIsAiAssistantOpen,
     isTryOnOpen,

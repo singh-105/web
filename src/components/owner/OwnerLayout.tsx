@@ -11,7 +11,9 @@ import {
   ShieldCheck,
   Store,
   LogOut,
-  ChevronRight
+  ChevronRight,
+  Menu,
+  X
 } from 'lucide-react';
 import { useStore } from '../../context/StoreContext';
 import { OwnerDashboard } from './OwnerDashboard';
@@ -31,6 +33,8 @@ export const OwnerLayout: React.FC = () => {
     'dashboard' | 'ai_copilot' | 'products' | 'inventory' | 'orders' | 'crm' | 'campaigns' | 'cms' | 'audit'
   >('dashboard');
 
+  const [isMobileOwnerMenuOpen, setIsMobileOwnerMenuOpen] = useState(false);
+
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'ai_copilot', label: 'AI Business Copilot', icon: Bot },
@@ -43,10 +47,106 @@ export const OwnerLayout: React.FC = () => {
     { id: 'audit', label: 'Security Audit Log', icon: ShieldCheck },
   ] as const;
 
+  const currentTabLabel = navItems.find(i => i.id === currentTab)?.label || 'Dashboard';
+
   return (
     <div className="min-h-screen bg-stone-950 text-stone-100 flex flex-col lg:flex-row">
-      {/* Sidebar Navigation */}
-      <aside className="w-full lg:w-64 bg-stone-900 border-r border-stone-800 p-6 flex flex-col justify-between shrink-0">
+      {/* Mobile Top Navigation Bar (< 1024px) */}
+      <div className="lg:hidden sticky top-0 z-40 bg-stone-900 border-b border-stone-800 p-4 flex items-center justify-between shadow-md">
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={() => setIsMobileOwnerMenuOpen(true)}
+            className="p-2 bg-stone-950 border border-stone-800 rounded-xl text-stone-200 hover:text-amber-400"
+            aria-label="Open Owner Navigation"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+          <div>
+            <span className="font-serif-heading text-sm font-bold text-stone-100 uppercase tracking-wider block">
+              {brandConfig.brandName} STORE PULSE
+            </span>
+            <span className="text-[10px] text-amber-400 font-semibold">{currentTabLabel}</span>
+          </div>
+        </div>
+
+        <button
+          onClick={() => {
+            setActiveMode('storefront');
+            setActivePage('home');
+          }}
+          className="bg-stone-950 border border-stone-800 text-stone-400 text-[10px] font-bold px-2.5 py-1.5 rounded-lg flex items-center space-x-1"
+        >
+          <LogOut className="w-3 h-3" />
+          <span>Exit Hub</span>
+        </button>
+      </div>
+
+      {/* Mobile Owner Drawer Menu Overlay */}
+      {isMobileOwnerMenuOpen && (
+        <div className="fixed inset-0 z-[99999] bg-stone-950/98 backdrop-blur-2xl flex flex-col animate-fade-in lg:hidden">
+          <div className="p-4 flex items-center justify-between border-b border-stone-800">
+            <div className="flex items-center space-x-2">
+              <div className="p-1.5 bg-amber-500/10 text-amber-400 rounded-lg border border-amber-500/30">
+                <Store className="w-5 h-5" />
+              </div>
+              <span className="font-serif-heading text-base font-bold text-stone-100 uppercase tracking-wider">
+                STORE PULSE HUB
+              </span>
+            </div>
+            <button
+              onClick={() => setIsMobileOwnerMenuOpen(false)}
+              className="p-2 text-stone-300 hover:text-white"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="p-6 space-y-2 overflow-y-auto flex-1">
+            <p className="text-[10px] uppercase tracking-widest text-amber-400 font-bold mb-2">Management Modules</p>
+            {navItems.map(item => {
+              const Icon = item.icon;
+              const isActive = currentTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setCurrentTab(item.id);
+                    setIsMobileOwnerMenuOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between p-3.5 rounded-xl text-xs font-semibold transition-all ${
+                    isActive
+                      ? 'bg-amber-500 text-stone-950 font-bold shadow-lg'
+                      : 'text-stone-300 hover:text-white bg-stone-900/60 border border-stone-800/80'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Icon className="w-4 h-4" />
+                    <span>{item.label}</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-stone-500" />
+                </button>
+              );
+            })}
+
+            <div className="pt-6 border-t border-stone-800">
+              <button
+                onClick={() => {
+                  setActiveMode('storefront');
+                  setActivePage('home');
+                  setIsMobileOwnerMenuOpen(false);
+                }}
+                className="w-full bg-stone-900 border border-stone-800 text-stone-300 p-3.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-2"
+              >
+                <LogOut className="w-4 h-4 text-amber-400" />
+                <span>Return to Customer Storefront</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Desktop Sidebar Navigation (>= 1024px) */}
+      <aside className="hidden lg:flex w-64 bg-stone-900 border-r border-stone-800 p-6 flex-col justify-between shrink-0">
         <div className="space-y-6">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-amber-500/10 text-amber-400 rounded-xl border border-amber-500/30 font-bold">
@@ -103,7 +203,7 @@ export const OwnerLayout: React.FC = () => {
       </aside>
 
       {/* Main Admin View Content Container */}
-      <main className="flex-1 p-6 sm:p-10 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-8 lg:p-10 overflow-y-auto">
         {currentTab === 'dashboard' && <OwnerDashboard />}
         {currentTab === 'ai_copilot' && <AiBusinessAssistant />}
         {currentTab === 'products' && <ProductManager />}

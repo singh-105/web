@@ -19,9 +19,13 @@ import { VirtualTryOnModal } from './components/storefront/VirtualTryOnModal';
 import { OutfitBuilderModal } from './components/storefront/OutfitBuilderModal';
 import { VisualSearchModal } from './components/storefront/VisualSearchModal';
 import { OwnerLayout } from './components/owner/OwnerLayout';
+import { useKeepAlive } from './hooks/useKeepAlive';
 
 const MainContainer: React.FC = () => {
   const { activeMode, activeNavTab, activePage } = useStore();
+  
+  // Initialize anti-sleep keep-alive timer (5 minute interval)
+  useKeepAlive(5);
 
   if (activeMode === 'owner') {
     return (

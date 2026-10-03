@@ -17,8 +17,16 @@ import {
 } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, PieChart, Pie, Cell } from 'recharts';
 import { useStore } from '../../context/StoreContext';
+import { useKeepAlive } from '../../hooks/useKeepAlive';
 
 export const OwnerDashboard: React.FC = () => {
+  const {
+    pingCount,
+    lastPingTime,
+    intervalMinutes,
+    targetUrl,
+    triggerManualPing
+  } = useKeepAlive(5);
   const {
     products,
     orders,
@@ -98,6 +106,31 @@ export const OwnerDashboard: React.FC = () => {
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Deployment Anti-Sleep Heartbeat Banner */}
+      <div className="bg-stone-900/90 border border-emerald-900/40 rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-800/40 flex items-center justify-center text-emerald-400 font-bold shrink-0">
+            <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+          </div>
+          <div>
+            <div className="flex items-center space-x-2">
+              <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Deploy Anti-Sleep Heartbeat Active</span>
+              <span className="px-2 py-0.5 rounded-md bg-stone-950 text-stone-400 border border-stone-800 text-[10px]">Every {intervalMinutes} min</span>
+            </div>
+            <p className="text-xs text-stone-400 mt-0.5">
+              Preventing server sleep mode on host <code className="text-stone-300 bg-stone-950 px-1 py-0.5 rounded border border-stone-800">{targetUrl}</code>. Total Pings: <strong className="text-stone-200">{pingCount}</strong> {lastPingTime && `• Last: ${lastPingTime}`}
+            </p>
+          </div>
+        </div>
+        <button
+          onClick={triggerManualPing}
+          className="shrink-0 px-3.5 py-2 rounded-xl bg-stone-950 hover:bg-stone-800 border border-emerald-800/40 text-emerald-400 hover:text-emerald-300 text-xs font-semibold flex items-center space-x-2 transition-colors"
+        >
+          <RefreshCw className="w-3.5 h-3.5" />
+          <span>Ping Now</span>
+        </button>
       </div>
 
       {/* SECTION 28: WHAT NEEDS YOUR ATTENTION TODAY? (STORE PULSE CARDS) */}

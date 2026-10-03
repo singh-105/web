@@ -143,14 +143,7 @@ export const Footer: React.FC = () => {
 
       {/* Copyright */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-stone-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500">
-        <div className="flex items-center space-x-3">
-          <p>© {new Date().getFullYear()} {brandConfig.brandName} Atelier Ltd. All Rights Reserved.</p>
-          <span className="hidden md:inline-block text-stone-700">•</span>
-          <span className="hidden md:inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-800/40 text-[10px]">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Anti-Sleep Heartbeat Active (5 min)</span>
-          </span>
-        </div>
+        <p>© {new Date().getFullYear()} {brandConfig.brandName} Atelier Ltd. All Rights Reserved.</p>
         <div className="flex items-center space-x-4 mt-4 sm:mt-0">
           <a href="#privacy" className="hover:underline">Privacy Policy</a>
           <span>•</span>
